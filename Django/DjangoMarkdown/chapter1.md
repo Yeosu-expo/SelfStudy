@@ -155,7 +155,6 @@ Slogan: **마감 시간**이 있는 **완벽주의자**를 위한 **웹 프레�
 >> 어쨌든 View를 거처야 수행가능
 
 ## 장고 실행 흐름
-![Alt text](./Django/DjangoMarkdown/img/스크린샷%202023-05-20%20215433.png)
+![Alt text](./img/스크린샷%202023-05-20%20215433.png)
 
 # 파이썬 Django 실습
-[Github](https://github.com/3chamchi/project-lion-backend-django)
