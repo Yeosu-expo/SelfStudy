@@ -1,4 +1,4 @@
-# 백엔드 개발을 시작하며
+# 1-2 백엔드 개발을 시작하며
 ## 웹의 동작 원리
 ### 클라이언트와 서버
 클라이언트: 요청을 보내는 입장
@@ -21,7 +21,7 @@
 
 하나의 언어, 프레임워크만 다루지 않고 여러가지의 프레임워크와 언어를 공부해야한다. 프로젝트 마다 요구되는 프레임워크와 언어가 달라지기 때문이다.
 
-# 웹 프레임워크와 Django
+# 1-3 웹 프레임워크와 Django
 ##  웹 프레임워크
 ### 프레임워크
 * 소프트웨어 개발을 위한 **기능, 구조의 틀을 제공**
@@ -74,7 +74,7 @@ d는 묵음처리해서 장고라고 부른다...
 * URL 파싱
 * 요청 파싱
 
-# Hello Django (1)
+# 1-4 Hello Django (1)
 Slogan: **마감 시간**이 있는 **완벽주의자**를 위한 **웹 프레임워크**.
 (The web framework for perfectionists with deadline.)
 
@@ -99,7 +99,7 @@ Slogan: **마감 시간**이 있는 **완벽주의자**를 위한 **웹 프레�
 * 장고 프로젝트 관점에서 관련된 기능을 모아둔 파이썬 파일
 * 앱 이름은 **영문 복수형**으로 생성
   
-# Hello Django (2)
+# 1-5 Hello Django (2)
 ## 장고 핵심 요소
 * Python
 * ORM
@@ -131,7 +131,7 @@ Slogan: **마감 시간**이 있는 **완벽주의자**를 위한 **웹 프레�
 * Security
   * 대표적인 보안사항 기능 제공(CSRF보호, 호스트 헤더 유효성 검사, SQL주입 보호 등...)
 
-# Django의 기본 구조
+# 1-6 Django의 기본 구조
 ## MTV
 ### MTV 디자인 패턴
 #### MTV 디자인 패턴 - 1
@@ -157,4 +157,49 @@ Slogan: **마감 시간**이 있는 **완벽주의자**를 위한 **웹 프레�
 ## 장고 실행 흐름
 ![Alt text](./img/스크린샷%202023-05-20%20215433.png)
 
-# 파이썬 Django 실습
+# 1-7 개발 환경 세팅하기
+[Github](https://github.com/3chamchi/project-lion-backend-django)
+
+# 1-8 Django 설치하기
+장고 프로젝트를 만들 때, "django-admin startproject 프로젝트명"으로 입력하는데 실무에서는 "django-admin startproject config ."을 입력해서 사용하기 쉽게 한다.
+
+# 1-9 Django의 기본 로직: URLs and Views (1)
+디렉토리 상태
+![Alt text](./img/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-05-21%20163704.png)
+## 디렉토리 및 파일 설명
+* manage.py: 장고에 명령어를 쓸 수 있도록 하는 파이썬 파일
+* config:설정파일이 들어있음을 명시함. 그래서 유지보수 측면에서 다른 개발자가 봐도 설정파일임을 알 수 있다.(참고. 명령어를 만드는 파일 혹은 자동으로 생성되는 파일은 함부로 이름을 바꾸면 많은 오류를 초래할 수 있으니 주의하자.)
+* __init__.py: 이 파일이 들어있는 폴더는 파이썬 파일이다는 것을 알려주는 역할.
+* wsgi.py: 다른 누군가가 쓸 수 있게 공개했다는 것을 알려주는 파일
+* settings.py: 중요한 파일 중 하나로, 장고가 실행될 때 필요한 변수나 값들이 저장되어 있음
+* urls.py: view에게 코드를 넘기기 위해 경로를 설정해주는 역할
+
+## 계산기 앱을 만들어보자
+### 앱 만들기
+명령어 "django-admin startapp 앱명"로 앱 생성
+여기선 demos로 지었음
+
+디렉토리 상태
+![Alt text](./img/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-05-21%20164616.png)
+
+urls.py에서 경로를 지정해주면, views.py에 있는 함수가 실행이 되어서 응답을 할 수 있다. 여기에 demos(App)에 templates파일을 만들고(파일명은 바뀌면 안됨. 지정되어 있는 파일명임), 그 안에 html파일을 만든다. 그리고 view.py에 render함수로 리턴하면, html파일이 화면에 보여진다.
+
+config/urls.py
+![Alt text](./img/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-05-21%20171344.png)
+
+demos/view.py
+![Alt text](./img/%ED%99%94%EB%A9%B4%20%EC%BA%A1%EC%B2%98%202023-05-21%20171453.png)
+
+디렉토리 상태
+![Alt text](./img/%ED%99%94%EB%A9%B4%20%EC%BA%A1%EC%B2%98%202023-05-21%20171503.png)
+
+# 1-10. Django의 기본로직: URLs and Views (2)
+
+# 1-11 HTTP의 기본: Request and Response (1)
+## HTTP(Hyper Text Transfer Protocol)
+* 정보 통신 규약
+* http는 HTML문서와 같은 리소스들을 가져올 수 있도록 해주는 프로토콜
+* http로 클라이언트와 서버가 요청하고 응답한다.
+* e.g.) 웹브라우저에서 urls.py에 요청하는 것과, view에서 웹브라우저에 응답하는 것 모두 http에 따른다.
+
+# 1-12 HTTP의 기본: Request and Response (2)
