@@ -31,7 +31,7 @@
   * 연립선형방정식의 해
     * 연립선형방정식의 모든 선형방정식을 만족하는 미지수들의 값
   * 행렬과 벡터를 이용하여 표현 가능
-    * $\begin{bmatrix}2&3&3\\3&4&2\\-2&2&3\\ \end{bmatrix}\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}=\begin{bmatrix}9\\0\\2\end{bmatrix}$
+    * $\begin{bmatrix}2&3&3\\3&4&2\\-2&2&3\\ \end{bmatrix} \begin{bmatrix}x_1\\x_2\\x_3 \end{bmatrix} = \begin{bmatrix}9\\0\\2 \end{bmatrix}$
 
 #### side topic
 * 미분에서, 주어진 곡선 y=f(x)의 그래프에서 그 위의 한 점(a, f(a))를 지나고 그래프에 접하는 직선의 방정식은 y = f'(a)f(x-a) + f(a)이다. 즉, 원래 곡선의 방정식인 f(x)과 f'(a)f(x-a) + f(a)이 x가 a와 가까울 때, 두 함수의 값이 비슷하거나 같다는 것이다.
