@@ -89,7 +89,7 @@
 * 넓은 의미에서 피벗이 1이 아니더라도 값이 있는 것을 중요하게 생각하는 시점도 있기 때문에 1이 아니어도 Row echelon form로 보기도 한다. 따라서 Row echelon form이 유일하지 않다
 * Row echelon form를 유일하게 만드는 형태를 reduced row echelon form이라고 한다.
 
-### reduced row echelon form
+### reduced row echelon form(기약행 사다리꼴 행렬)
 * row echelon form에서 피벗이 해당 열에서 0이 아닌 유일한 성분인 행렬을 reduced row echelon form(기약행 사다리꼴 행렬) 또는 축약행 사다리꼴 행렬이라 한다.
 * reduced row echelon form의 예
   * 1

@@ -1,1 +1,3 @@
-print(10**100)
+import math
+
+print("hello")
