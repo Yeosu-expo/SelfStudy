@@ -22,7 +22,7 @@ let $x = \(x_1,x_2,...,x_n\) \in R^n$, x의 크기norm는 $\vert\vert x \vert\ve
 * 피타고라스 정리에서 두 벡터의 합의 크기의 제곱과 각벡터의 크기의 제곱의 합이 같으면 직교한다.(증명은 두 벡터의 합의 크기의 제곱이 두 벡터의 합의 제곱이 같다는 것으로 할 수 있다.)
 
 #### 내적의 성질
-![inner product attri](./inner%20product%20attri.png)
+![inner product attri](./img/inner%20product%20attri.png)
 (5)$x \cdot x= \(x_1,x_2,...,x_n\) \cdot \(x_1,x_2,...,x_n\)$
     $=(x_1)^2+(x_2)^2+ ... + (x_n)^2$
     $= {\vert\vert x \vert\vert}^2 >= 0$
