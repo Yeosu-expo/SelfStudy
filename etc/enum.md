@@ -1,0 +1,1 @@
+[enum](https://boycoding.tistory.com/179)
