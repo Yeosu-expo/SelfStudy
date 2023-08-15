@@ -87,9 +87,9 @@ int main(){
 ### 결과
 CASE_A completed
 
-CASE_A Failed
+CASE_A Failed</br>
 CASE_B completed
 
-CASE_A Failed
-CASE_B Failed
+CASE_A Failed</br>
+CASE_B Failed</br>
 CASE_C completed
