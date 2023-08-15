@@ -54,6 +54,7 @@ int main(){
 }
 ```
 출력결과
+```c
 Composite //Head
 Composite //Node1
 Leaf //Node1 Leaf
@@ -62,3 +63,4 @@ Composite //Node2
 Leaf //Node2 Leaf
 Leaf //Node2 Leaf
 Leaf //Node2 Leaf
+```
