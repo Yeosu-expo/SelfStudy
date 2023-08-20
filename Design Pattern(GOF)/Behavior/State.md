@@ -58,7 +58,7 @@ class BadState:public State{
         static BadState* badState;
         BadState() {}
         public:
-                static State* getInstance(){
+                static State* getInstance(){ // Singleton pattern
                         if(badState == nullptr)
                                 badState = new BadState();
                         return badState;
