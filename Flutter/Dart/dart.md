@@ -26,13 +26,80 @@ name?.length; // null이 아닐때 함수가 실행됨
 ##### 변수 선언
 기본적으로 타입을 명시하고 선언해도 되지만, var로 선언해도 된다. dart에서 알아서 변수에 들어가는 값을 받고 유추해서 타입을 정한다. 하지만 한번 정해진 타입이 있는 변수에는 다른 타입 값이 들어갈 수 없다.
 
+##### dynamic
 dynamic이라는 타입이 있는데 이것은 변수의 타입이 다이나믹하게 변경 가능하다는 뜻이다. 즉, 문자열 값이 들어갔다. 정수형이 들어갈 수도 있다는 것이다.
 
+##### final & const
 dart에는 다른 언어의 const랑 비슷한 final과 const가 있다.
 final은 우리가 알고 있는 const랑 비슷하게 한 번 값이 세팅되면 바뀌지 않는다. 하지만 dart에서 const는 final과 다르다. 한 번 값이 세팅되면 바뀌지 않는 것은 같지만, const는 컴파일 시점에서 이미 변수가 값을 구체적인 값을 알고 있어야한다. 다시 말해서 final변수는 프로그램이 실행되고 사용자에게 값을 받아오거나, API요청을 통해서 값을 받아오는 것이 가능하다. 반면 const는 컴파일 과정에서 이미 값을 알고 있어야 하기 때문에 프로그램 배포 이전, 즉, 컴파일 시점에 이미 변수에 값이 들어가야한다는 차이점이 있다.
 
+##### late
 final은 변수 선언당시 들어갈 값이나 리턴 값이 있는 함수를 변수에 넣어주면 되지만, 필요에 따라 나중에 값을 넣어주고 싶을 때가 있을 것이다. 이때 late키워드를 사용하면된다. 그러면 변수를 먼저 선언만 하고 나중에 값을 넣어줘도 된다.
 ```dart
 late final name;
 name="somthing";
 ```
+
+##### String with var
+문자열안에 변수를 넣어서 문자열을 완성시킬 수 있다. 추가적인 작업이 필요하다면 중괄호 안에서 해주면 된다.
+```dart
+String name = "kim"
+int age = 20;
+String greeting = 'My name is $name and i\'m ${age + 3}.'
+```
+문자열을 작은따옴표나 큰따옴표 어떤 것으로든 감싸도 되지만, 감싼 따옴표가 문자열 안에 있을 때는 역슬래시와 함께 써주어야한다.
+
+***
+#### 자료구조
+##### List
+```dart
+List<int> numbers1 = [1,2,3,4,];
+var numbers2 = [1,2,3,4,]; // 위의 코드와 같음
+
+bool isTrue = true;
+var numbers3 = [
+    1,
+    2,
+    3,
+    4,
+    if(isTrue) 5,
+];
+print(numbers3); // [1,2,3,4,5]
+
+var oldFriends = ["kim", "lee"];
+var newFriends = [
+    "park",
+    "choi",
+    for(var friend in oldFriends) "*$friend*",
+];
+print(newFriends); // [park, choi, *kim*, *lee*]
+```
+if, for 문을 통해 원소를 추가할 수 있음
+##### Map
+```dart
+var map = [ // Map<String, Object> map와 같음
+    "first": "kim",
+    "second": 12,
+    "third": true,
+];
+Map<int, bool> map2 = [
+    1: true,
+    2: false,
+    3: false,
+];
+```
+다른 자료형에서도 그랬듯이 dart는 var로 선언하면 자료형을 추측해서 정한다. map을 보면 var로 선언했고, 그 안의 원소들이 key값에는 문자열이 value값에는 여러가지 자료형이 있다. 그렇기 때문에 key의 자료형으로 String, value의 자료형으로 어떤 자료형이든 포함하는 개념인 Object로 정해진다.
+
+##### Set
+```dart
+Set<int> setInt = {1,2,3,4};
+setInt.add(1);
+setInt.add(1);
+setInt.add(1);
+print(setInt); //{1,2,3,,4}
+```
+set은 다른 자료형과 다르게 유니크한 값을 갖는다. 선언은 다른 자료형과 다르게 중괄호로 선언한다.
+
+***
+
+
