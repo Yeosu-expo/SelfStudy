@@ -125,6 +125,8 @@ info := map[string]int{"kim":10, "lee":12}
 ```
 key와 value의 자료형을 위와 같이 선언할 수 있다. 또한, for문에서 range로 탐색시 반환 값은 key,value 값이다.
 
+한 가지 주의할 점은 빈 map을 선언할 경우 뒤에 {}을 붙여주거나 make함수로 선언해주어야 한다. 그러지 않으면 null값이 변수에 들어간다.
+
 ### struct
 ```go
 type Info struct{
