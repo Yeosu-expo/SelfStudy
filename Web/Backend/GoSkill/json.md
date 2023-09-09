@@ -12,29 +12,29 @@ import (
 	"time"
 )
 
-type info struct {
-	firstName string    `json:"first_name"` // json은 키값으로 언더바표기법을 가지기 때문에 백틱으로 json에서는 이런 이름으로 사용할 것을 명시
-	lastName  string    `json:"last_name"`
-	email     string    `json:"email"`
-	createdAt time.Time `json:"created_at"`
+type Info struct {
+	FirstName string    `json:"first_name"`
+	LastName  string    `json:"last_name"`
+	Email     string    `json:"email"`
+	CreatedAt time.Time `json:"created_at"`
 }
 
 type concreteHandler struct{}
 
 func (f *concreteHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	userInfo := new(info)
+	userInfo := new(Info)
 	err := json.NewDecoder(r.Body).Decode(userInfo) // info형태로 json을 받음
 	if err != nil {
 		w.WriteHeader(http.StatusBadRequest)
 		fmt.Fprint(w, "Decoder error: ", err)
 		return
 	}
-	userInfo.createdAt = time.Now()
+	userInfo.CreatedAt = time.Now()
 
 	data, _ := json.Marshal(userInfo) // info형태의 정보를 json형태로 변환해서 data에 저장
 	w.Header().Add("content-type", "application/json")
 	w.WriteHeader(http.StatusOK)
-	fmt.Fprint(w, "json: ", data) // 본래 json은 일종의 string이기 때문에 byte array타입인 data를 다시 string으로 변환해줌
+	fmt.Fprint(w, "json: ", string(data)) // 본래 json은 일종의 string이기 때문에 byte array타입인 data를 다시 string으로 변환해줌
 }
 
 func main() {
@@ -55,5 +55,8 @@ func main() {
 
 	http.ListenAndServe(":3000", mux)
 }
-
 ```
+
+#### 시행착오
+* 구조체를 소문자로 정의해서 json패키지에서 해당 구조체를 인식하지 못했음
+* 구조체의 필드를 소문자로 정의해서 외부 패키지에서 참조할 수 없었음
